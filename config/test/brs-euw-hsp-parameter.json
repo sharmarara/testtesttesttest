@@ -1,0 +1,186 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "artifactsLocation": {
+            "value": "https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/Configuration_8-16-2021.zip"
+        },
+        "nestedTemplatesLocation": {
+            "value": "https://catalogartifact.azureedge.net/publicartifacts/Microsoft.Hostpool-ARM-1.10.0/"
+        },
+        "tokenExpirationTime": {
+            "value": "2021-10-01T15:46:44.2411724Z"
+        },
+        "vmTemplate": {
+            "value": "{\"domain\":\"mignetwork.net\",\"galleryImageOffer\":null,\"galleryImagePublisher\":null,\"galleryImageSKU\":null,\"imageType\":\"CustomImage\",\"imageUri\":null,\"customImageId\":\"/subscriptions/c2242621-293d-4604-918a-42718bca43b8/resourceGroups/brh-euw-rsg-p-hub-goldenimage/providers/Microsoft.Compute/galleries/brheuwsigp01/images/brh-euw-sigvm-p-avd-w10\",\"namePrefix\":\"brseuwcwtav\",\"osDiskType\":\"StandardSSD_LRS\",\"useManagedDisks\":true,\"vmSize\":{\"id\":\"Standard_D4s_v3\",\"cores\":4,\"ram\":16},\"galleryItemId\":null}"
+        },
+        "intune": {
+            "value": false
+        },
+        "hostpoolName": {
+            "value": "brs-euw-hsp-t-avd-03"
+        },
+        "hostpoolDescription": {
+            "value": "Created through the Azure Virtual Desktop extension"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "validationEnvironment": {
+            "value": true
+        },
+        "hostpoolType": {
+            "value": "Pooled"
+        },
+        "loadBalancerType": {
+            "value": "BreadthFirst"
+        },
+        "vmResourceGroup": {
+            "value": "brs-euw-rsg-t-avd"
+        },
+        "vmNamePrefix": {
+            "value": "brseuwcwtvdt"
+        },
+        "vmLocation": {
+            "value": "westeurope"
+        },
+        "availabilityOption": {
+            "value": "AvailabilityZone"
+        },
+        "availabilitySetName": {
+            "value": ""
+        },
+        "createAvailabilitySet": {
+            "value": false
+        },
+        "availabilitySetUpdateDomainCount": {
+            "value": 5
+        },
+        "availabilitySetFaultDomainCount": {
+            "value": 2
+        },
+        "availabilityZone": {
+            "value": 1
+        },
+        "vmImageType": {
+            "value": "CustomImage"
+        },
+        "vmSize": {
+            "value": "Standard_D4s_v3"
+        },
+        "vmNumberOfInstances": {
+            "value": 1
+        },
+        "vmDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "vmUseManagedDisks": {
+            "value": true
+        },
+        "bootDiagnostics": {
+            "value": {
+                "enabled": true,
+                "storageUri": "https://brseuwstotdiagacct01.blob.core.windows.net/"
+            }
+        },
+        "virtualNetworkResourceGroupName": {
+            "value": "brs-euw-rsg-t-network"
+        },
+        "existingVnetName": {
+            "value": "brs-euw-vnt-t-01"
+        },
+        "existingSubnetName": {
+            "value": "brs-euw-snt-t-avd"
+        },
+        "createNetworkSecurityGroup": {
+            "value": false
+        },
+        "aadJoin": {
+            "value": false
+        },
+        "administratorAccountUsername": {
+            "value": "mignetwork\\altirisimport"
+        },
+        "administratorAccountPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/c2242621-293d-4604-918a-42718bca43b8/resourceGroups/brh-euw-rsg-p-hub-kv/providers/Microsoft.KeyVault/vaults/brh-euw-kv-p-hub-mgmt-02"
+                },
+                "secretName": "DomainJoinPassword"
+            }
+        },
+        "domain": {
+            "value": "mignetwork.net"
+        },
+        "ouPath": {
+            "value": "OU=AVDTest,OU=Desktop,OU=AZ,OU=Workstations-MIG2,DC=mignetwork,DC=net"
+        },
+        "vmAdministratorAccountUsername": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/916cea10-da09-4458-9969-54db1d71975f/resourceGroups/brs-euw-rsg-t-avd/providers/Microsoft.KeyVault/vaults/brs-euw-kv-t-avd-01"
+                },
+                "secretName": "wvdadminuser"
+            }
+        },
+        "vmAdministratorAccountPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/916cea10-da09-4458-9969-54db1d71975f/resourceGroups/brs-euw-rsg-t-avd/providers/Microsoft.KeyVault/vaults/brs-euw-kv-t-avd-01"
+                },
+                "secretName": "wvdpassword"
+            }
+        },
+        "addToWorkspace": {
+            "value": true
+        },
+        "applicationGroupTags": {
+            "value": {}
+        },
+        "availabilitySetTags": {
+            "value": {}
+        },
+        "hostpoolTags": {
+            "value": {}
+        },
+        "imageTags": {
+            "value": {}
+        },
+        "networkInterfaceTags": {
+            "value": {}
+        },
+        "networkSecurityGroupTags": {
+            "value": {}
+        },
+        "virtualMachineTags": {
+            "value": {}
+        },
+        "apiVersion": {
+            "value": "2019-12-10-preview"
+        },
+        "deploymentId": {
+            "value": "742d403d-3602-4ecd-9ad6-f37885876063"
+        },
+        "vmCustomImageSourceId": {
+            "value": "/subscriptions/c2242621-293d-4604-918a-42718bca43b8/resourceGroups/brh-euw-rsg-p-hub-goldenimage/providers/Microsoft.Compute/galleries/brheuwsigp01/images/brh-euw-sigvm-p-avd-w10"
+        },
+        "maxSessionLimit": {
+            "value": 15
+        },
+        "workspaceResourceGroup": {
+            "value": "brs-euw-rsg-t-avd"
+        },
+        "workspaceName": {
+            "value": "brs-euw-wkp-t-avd-03"
+        },
+        "workspaceLocation": {
+            "value": "westeurope"
+        },
+        "allApplicationGroupReferences": {
+            "value": ""
+        },
+        "isNewWorkspace": {
+            "value": true
+        }
+    }
+}

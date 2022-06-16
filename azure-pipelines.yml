@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+  Stages:
+   - Stage : DEV  
+steps:
+# Copying files from source folder(Repo)
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+# Publishing Artifact into Target forder of drop location
+- task: PublishBuildArtifacts@1  
+  displayName: 'Publish Artifact: ARM_Template Artifact'
+  inputs:
+    ArtifactName: 'drop'
